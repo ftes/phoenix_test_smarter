@@ -22,7 +22,6 @@ defmodule SmartWeb.UserRegistrationLive do
         for={@form}
         id="registration_form"
         phx-submit="save"
-        phx-change="validate"
         phx-trigger-action={@trigger_submit}
         action={~p"/users/log_in?_action=registered"}
         method="post"
@@ -32,8 +31,17 @@ defmodule SmartWeb.UserRegistrationLive do
         </.error>
 
         <.input field={@form[:email]} type="email" label="Email" required />
-        <.input field={@form[:password]} type="password" label="Password" required />
-
+        <.input
+          id="pwd"
+          phx-hook="Password"
+          field={@form[:password]}
+          type="password"
+          label="Password"
+          required
+        />
+        <div id="pwd-error" class="hidden text-rose-600 text-sm" phx-update="ignore">
+          should be at least 12 character(s)
+        </div>
         <:actions>
           <.button phx-disable-with="Creating account..." class="w-full">Create an account</.button>
         </:actions>

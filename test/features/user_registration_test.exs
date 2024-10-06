@@ -13,7 +13,7 @@ defmodule Features.UserRegistrationTest do
 
       ## Password too short
       |> fill_in("Password", with: "short")
-      |> assert_has(".text-rose-600", text: "at least 12")
+      |> assert_has(".text-rose-600:not(.hidden)", text: "at least 12")
 
       ## Success
       |> fill_in("Password", with: "password1234")
