@@ -52,7 +52,9 @@ defmodule Smart.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
-      {:phoenix_test, path: "../phoenix_test", only: :test, runtime: false}
+      {:phoenix_test, path: "../phoenix_test", only: :test, runtime: false},
+      {:cowlib, "~> 2.13.0", override: true},
+      {:playwright, path: "../playwright-elixir", only: :test, override: true}
     ]
   end
 
