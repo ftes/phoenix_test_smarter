@@ -1,8 +1,10 @@
 defmodule Features.UserRegistrationTest do
-  use SmartWeb.ConnCase, async: true
+  use SmartWeb.ConnCase
+  use PhoenixTest.Case, playwright: :chromium
   import PhoenixTest
 
   describe "register user" do
+    @tag :playwright
     test "creates account, logs the user in and out and in again", %{conn: conn} do
       conn
       |> visit("/")

@@ -115,3 +115,8 @@ if config_env() == :prod do
   #
   # See https://hexdocs.pm/swoosh/Swoosh.html#module-installation for details.
 end
+
+if config_env() == :test do
+  config :playwright, LaunchOptions,
+    headless: String.to_atom(System.get_env("PLAYWRIGHT_HEADLESS", "true")) != false
+end

@@ -21,7 +21,7 @@ config :smart, Smart.Repo,
 config :smart, SmartWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "MqGQ4IiJSMuMc7uMVdH0AT74pQeppUzBAEhzAqO2rpfEF/t9nqLiMAbo73ou883A",
-  server: false
+  server: true
 
 # In test we don't send emails.
 config :smart, Smart.Mailer, adapter: Swoosh.Adapters.Test
