@@ -12,7 +12,7 @@ defmodule Features.UserRegistrationTest do
       |> fill_in("Email", with: "f@ftes.de")
       |> fill_in("Password", with: "password1234")
       |> submit()
-      |> assert_has("#flash-info", text: "User created")
+      |> assert_has("#flash-info", text: "Account created")
 
       # Log out
       |> click_link("Log out")
