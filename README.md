@@ -9,3 +9,12 @@ MIX_ENV=test mix ecto.reset
 ```
 
 2. reload zed
+
+## Present
+- focus mode
+- increase font size globally
+- theme color ("One Light", "Summercamp")
+
+## Hotkeys
+- Mirror display: Cmd + F1 (or `$ mirror`)
+- Fullscreen: Opt + F

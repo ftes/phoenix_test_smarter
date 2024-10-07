@@ -1,5 +1,8 @@
 import Config
 
+# Only in tests, remove the complexity from the password hashing algorithm
+config :bcrypt_elixir, :log_rounds, 1
+
 # Configure your database
 #
 # The MIX_TEST_PARTITION environment variable can be used
@@ -18,7 +21,7 @@ config :smart, Smart.Repo,
 config :smart, SmartWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "MqGQ4IiJSMuMc7uMVdH0AT74pQeppUzBAEhzAqO2rpfEF/t9nqLiMAbo73ou883A",
-  server: false
+  server: true
 
 # In test we don't send emails.
 config :smart, Smart.Mailer, adapter: Swoosh.Adapters.Test
@@ -31,3 +34,5 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :phoenix_test, endpoint: SmartWeb.Endpoint
