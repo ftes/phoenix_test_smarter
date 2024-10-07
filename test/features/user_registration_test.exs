@@ -1,6 +1,6 @@
 defmodule Features.UserRegistrationTest do
   use SmartWeb.ConnCase
-  use PhoenixTest.Case, playwright: :chromium
+  use PhoenixTest.Case, playwright: :chromium, headless: false, slow_mo: 500
   import PhoenixTest
 
   describe "register user" do
