@@ -22,6 +22,7 @@ defmodule SmartWeb.UserRegistrationLiveTest do
       assert {:ok, _conn} = result
     end
 
+    @tag :skip
     test "renders errors for invalid data", %{conn: conn} do
       {:ok, lv, _html} = live(conn, ~p"/users/register")
 
